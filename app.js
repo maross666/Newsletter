@@ -25,7 +25,9 @@ app.post('/', (req,res) => {
     const data = {
         members: [
             {
-                FNAME: name,
+                merge_fields: {
+                    FNAME: name
+                },
                 email_address: email,
                 status: "subscribed",
             }
@@ -51,7 +53,7 @@ app.post('/', (req,res) => {
             res.sendFile(__dirname + "/failure.html");
         }
 
-        response.on('d', (d) => {
+        response.on('data', (d) => {
             console.log(JSON.parse(d));
         });
 
