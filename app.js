@@ -25,6 +25,7 @@ app.post('/', (req,res) => {
     const data = {
         members: [
             {
+                FNAME: name,
                 email_address: email,
                 status: "subscribed",
             }
